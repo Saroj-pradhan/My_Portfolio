@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
-import {Moon,Sun} from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 const DarkToggle = () => {
   const [dark, setDark] = useState(true);
-  function handelDarkTheme(){
-    setDark(prev => !prev);
+  function handelDarkTheme() {
+    setDark((prev) => !prev);
   }
   useEffect(() => {
-  document.documentElement.classList.toggle("dark", dark);
+    const isDarkTheme = localStorage.getItem("DarkTheme");
+    if (isDarkTheme === "false") {
+      setDark(false);
+    }
+  }, []);
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+    localStorage.setItem("DarkTheme", String(dark));
   }, [dark]);
 
   return (
     <>
       <div
-        onClick={ handelDarkTheme}
+        onClick={handelDarkTheme}
         className="px-2 py-2 rounded bg-gray-50  text-black dark:bg-black   dark:text-white shadow-[0_1px_14px_rgba(0,0,0,0.2)] "
       >
-       {dark ? <Moon size={20}/> : <Sun size={20}/>}
+        {dark ? <Moon size={20} /> : <Sun size={20} />}
       </div>
-       
     </>
   );
 };
