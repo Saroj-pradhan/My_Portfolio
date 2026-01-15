@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
+import {motion} from "framer-motion"
 function Profile() {
   return (
-    <div className="pt-[40px] sm:pt-[70px] ">
+    <motion.div className="pt-[40px] sm:pt-[70px] " initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}>
       <img
         className=" w-24 h-24 rounded-[50%] hover:scale-110 mb-7"
         src="https://res.cloudinary.com/dddmddgzs/image/upload/v1767606273/WhatsApp_Image_2026-01-03_at_6.44.45_PM_dzaeh9.jpg"
@@ -175,7 +179,7 @@ function Profile() {
           </svg>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
