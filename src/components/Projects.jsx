@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function Projects() {
   return (
     <motion.div
-      className="pt-15 "
+      className="pt-15 pb-16"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
