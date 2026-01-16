@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function AboutMe() {
   return (
     <motion.div
-      className="pb-16"
+      className="pt-16"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
