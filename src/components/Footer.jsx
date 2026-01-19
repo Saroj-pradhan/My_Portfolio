@@ -1,9 +1,13 @@
-
-
+import {motion} from "framer-motion"
 function Footer() {
   return (
    
-        <div className="w-full pt-16  text-center text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
+        <motion.div className="w-full pt-16  text-center text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800"
+         initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+        >
   <p>
     
      Developed by{" "}
@@ -15,7 +19,7 @@ function Footer() {
   <p>© 2026.  All rights reserved.</p>
 
 
-    </div>
+    </motion.div>
   )
 }
 

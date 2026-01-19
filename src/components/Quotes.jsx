@@ -52,7 +52,12 @@ function Quotes() {
     return quoteArr[Math.floor(Math.random() * quoteArr.length)];
    }
   return (
-    <motion.div className="mt-14 h-36 shadow-sm dark:shadow-gray-300/20 shadow-black/25 rounded-2xl  p-4 flex flex-col justify-center ">
+    <motion.div className="mt-14 h-36 shadow-sm dark:shadow-gray-300/20 shadow-black/25 rounded-2xl  p-4 flex flex-col justify-center "
+     initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
         <p className="text-[#2a2a2bbd] font-light dark:text-white text-lg">"{quote.text}"</p>
         <p className="text-end ">— {quote.author}</p>
     </motion.div>
